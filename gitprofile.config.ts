@@ -49,17 +49,10 @@ const CONFIG = {
           title: 'Tell Me More About Core',
           description:
             'Community hub & content platform for Core Blockchain — long-form articles, drops, NFC-bound merch, and the CorePass-Identity ecosystem. Built as part of the Codetech ecosystem.',
+          // Placeholder = GitHub-Avatar (TMMAC-Logo). Sobald die Landingpage live ist, durch echten Screenshot ersetzen.
           imageUrl:
-            'https://opengraph.githubassets.com/1/StotheC90/tmmac-landingpage',
+            'https://avatars.githubusercontent.com/u/105504238?v=4&s=400',
           link: 'https://tmmac.cc',
-        },
-        {
-          title: 'CorePass Telegram Guard',
-          description:
-            'Production gate at guard.tmmac.cc — verifies CorePass identity via passkey-flow before granting access to private Telegram groups. End-to-end E2E verified.',
-          imageUrl:
-            'https://opengraph.githubassets.com/1/StotheC90/tmmac-auth-config',
-          link: 'https://guard.tmmac.cc',
         },
         {
           title: 'Open Design — Contributor',
