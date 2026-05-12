@@ -1,63 +1,102 @@
 // gitprofile.config.ts
+//
+// Daniel Stothec — Personal Portfolio
+// Auto-deployed to https://stothec90.github.io via GitHub Actions on push to main.
+//
+// REVIEW-CHECKLIST (Daniel):
+//   1. Bio/Description auf GitHub-Profil setzen (https://github.com/settings/profile)
+//      — wird automatisch oben auf der Page gezogen, hier nicht konfigurierbar.
+//   2. SEO-Description unten anpassen falls gewuenscht.
+//   3. Experiences: derzeit nur TMMAC eingetragen — frühere Stationen ergaenzen falls relevant.
+//   4. External-Projects: Image-URLs sind Platzhalter, ggf. eigene Screenshots/Logos hochladen.
+//   5. payto / coreid leer gelassen — befuellen falls du oeffentliche XCB-Adresse/CorePass-ID haben willst.
+//   6. Resume-PDF: leer gelassen — falls du einen Lebenslauf zeigen willst, in public/ legen + URL setzen.
 
 const CONFIG = {
   github: {
-    username: 'rastislavcore', // Your GitHub org/user name. (This is the only required config)
-    sponsorship: true, // Legacy: if `donation.embed` is omitted, true maps to GitHub embed
+    username: 'StotheC90',
+    sponsorship: false,
   },
   donation: {
-    /** `github` | `fediverse` (Misskey) | `none` — hide the donation card */
-    embed: 'fediverse' as const,
-    /** Misskey user id (from your instance settings/API), not @handle. Host from `social.fediverse`. */
-    misskeyUserId: '9ram8rq2axwj0001',
-    /** Misskey iframe only: `light`, `dark`, or `auto` (browser may pick). */
-    embedColorScheme: 'light' as const,
+    embed: 'none' as const,
+    misskeyUserId: '',
+    embedColorScheme: 'auto' as const,
   },
-  /**
-   * If you are deploying to https://<USERNAME>.github.io/, for example your repository is at https://github.com/arifszn/arifszn.github.io, set base to '/'.
-   * If you are deploying to https://<USERNAME>.github.io/<REPO_NAME>/,
-   * for example your repository is at https://github.com/arifszn/portfolio, then set base to '/portfolio/'.
-   */
   base: '/',
   projects: {
     github: {
-      display: true, // Display GitHub projects?
-      header: 'GitHub Public Commits',
-      mode: 'automatic', // Mode can be: 'automatic' or 'manual'
+      display: true,
+      header: 'Public GitHub Projects',
+      mode: 'manual',
       automatic: {
-        type: 'commits', // 'commits' will display user's commit, 'projects' will display projects by user.
-        sortBy: 'committer-date', // Sort projects by 'stars', 'updated' or 'committer-date'.
-        limit: 8, // How many projects to display.
+        type: 'projects',
+        sortBy: 'updated',
+        limit: 8,
         exclude: {
-          forks: false, // Forked projects will not be displayed if set to true.
-          projects: [], // These projects will not be displayed. example: ['arifszn/my-project1', 'arifszn/my-project2']
+          forks: false,
+          projects: [],
         },
       },
       manual: {
-        // Properties for manually specifying projects
-        projects: [], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        // Nur die public Repos — private Repos werden eh nicht gerendert.
+        projects: ['StotheC90/teleprompter', 'StotheC90/open-design'],
       },
     },
     external: {
-      header: 'My Projects',
-      // To hide the `External Projects` section, keep it empty.
-      projects: [],
+      header: 'Featured Projects',
+      projects: [
+        {
+          title: 'Tell Me More About Core',
+          description:
+            'Community hub & content platform for Core Blockchain — long-form articles, drops, NFC-bound merch, and the CorePass-Identity ecosystem. Built as part of the Codetech ecosystem.',
+          imageUrl:
+            'https://opengraph.githubassets.com/1/StotheC90/tmmac-landingpage',
+          link: 'https://tmmac.cc',
+        },
+        {
+          title: 'CorePass Telegram Guard',
+          description:
+            'Production gate at guard.tmmac.cc — verifies CorePass identity via passkey-flow before granting access to private Telegram groups. End-to-end E2E verified.',
+          imageUrl:
+            'https://opengraph.githubassets.com/1/StotheC90/tmmac-auth-config',
+          link: 'https://guard.tmmac.cc',
+        },
+        {
+          title: 'Open Design — Contributor',
+          description:
+            'Local-first, open-source alternative to Claude Design. 19 Skills, 71 brand-grade design systems, runs on multiple AI CLIs. Contributed PR #270 (macOS lifecycle) and PR #570 (README docs).',
+          imageUrl:
+            'https://opengraph.githubassets.com/1/nexu-io/open-design',
+          link: 'https://github.com/nexu-io/open-design',
+        },
+        {
+          title: 'Teleprompter',
+          description:
+            'Single-file HTML teleprompter for podcast recordings — auto-scroll, voice-sync, keyboard shortcuts, remote control. Used in production for the TMMAC podcast.',
+          imageUrl:
+            'https://opengraph.githubassets.com/1/StotheC90/teleprompter',
+          link: 'https://github.com/StotheC90/teleprompter',
+        },
+      ],
     },
   },
   seo: {
-    title: 'Rastislav ₡ore — Contacts, Portfolio & Blog',
-    description: 'Portfolio of Rastislav ₡ore. Blockchain Engineer, Software Developer, and Open Source Contributor.',
+    title: 'Daniel Stothec — Web3 Developer & Core Builder',
+    description:
+      'Solidity & Ylem Smart Contracts, TypeScript/React frontends, and Core Blockchain tooling. Building Tell Me More About Core (Codetech ecosystem).',
     imageURL: '',
-    githubId: '537310', // GitHub user id. To get your id, visit https://api.github.com/users/<username>
+    githubId: '105504238',
+    // Wallet-Discovery via Meta-Tags. Leer lassen wenn du keine oeffentliche XCB-Adresse zeigen willst.
+    // Befuellen z.B. mit { property: 'ican/xcb', content: 'cb...' }
     payto: {
-      property: 'ican/xcb',
-      content: 'cb25ee54be855c78b1bb0068ff650b8be8fb4339d3ff',
+      property: '',
+      content: '',
     },
   },
   social: {
-    linkedin: 'rastislavcore',
-    twitter: 'rastislavcore',
-    fediverse: '@rastislav@coretalk.space',
+    linkedin: '',
+    twitter: 'Daniel_StotheC',
+    fediverse: '',
     researchGate: '',
     facebook: '',
     tiktok: '',
@@ -69,119 +108,88 @@ const CONFIG = {
     dribbble: '',
     behance: '',
     medium: '',
-    dev: 'rastislavcore',
+    dev: '',
     stackoverflow: '',
-    wiki: 'https://en.everybodywiki.com/Rastislav_Va%C5%A1i%C4%8Dka',
+    wiki: '',
     skype: '',
     telegram: '',
-    website: 'https://github.com/rastislavcore',
+    website: 'https://tellmemoreaboutcore.com',
     phone: '',
-    email: 'rastislav@onion.email?subject=Contact%20from%20portfolio&key=https%3A%2F%2Fkeys.openpgp.org%2Fvks%2Fv1%2Fby-fingerprint%2FF670A2D3626AB878A46D7AA8879FF4E05B438A11',
-    payto: 'payto://xcb/cb25ee54be855c78b1bb0068ff650b8be8fb4339d3ff?rc=m&donate=1&org=vasicka.eu&item=green+circles+%F0%9F%9F%A2&color-b=37c848', // visit https://payto.money/ to generate your payto link
-    coreid: '', // visit https://corepass.net/ to create your Core ID
+    email: 'daniel.stothec@gmail.com',
+    // payto: 'payto://xcb/...', // optional: deine oeffentliche XCB-Adresse
+    coreid: '', // optional: deine CorePass-ID (https://corepass.net)
   },
   resume: {
-    fileUrl:
-      '', // Empty fileUrl will hide the `Download Resume` button.
+    fileUrl: '', // leer = "Download Resume"-Button versteckt
   },
   publicKey: {
-    fileUrl:
-      'https://keys.openpgp.org/vks/v1/by-fingerprint/F670A2D3626AB878A46D7AA8879FF4E05B438A11', // Empty publickey will hide the `Download Public key` button.
+    fileUrl: '', // leer = "Download Public Key"-Button versteckt
   },
   skills: [
-    'Blockchain',
-    'OWASP',
-    'DeFi',
-    'DePIN',
+    'Solidity',
+    'Ylem',
     'Smart Contracts',
-    'RWA',
-    'Rust',
-    'Golang',
+    'Core Blockchain',
     'TypeScript',
-    'Web4',
-    'CyberSec',
-    'ZTA'
+    'React',
+    'Node.js',
+    'Vite',
+    'WordPress',
+    'Python',
+    'Bash',
+    'Docker',
+    'PM2',
+    'Web3',
+    'NFT / RWA',
+    'CorePass / Web4',
   ],
   experiences: [
     {
-      company: 'ARAX',
-      position: 'CTO',
-      link: 'https://arax.cc',
+      company: 'Tell Me More About Core (Codetech Ecosystem)',
+      position: 'Founder & Developer',
+      from: '2024',
+      to: 'Present',
+      companyLink: 'https://tellmemoreaboutcore.com',
     },
-    {
-      company: 'CoDeTech',
-      position: 'CIO',
-      link: 'https://codetech.cc',
-    },
-    {
-      company: 'CORE FOUNDATION',
-      position: 'Co-Founder',
-    },
-    {
-      company: 'Blockchain Hub CA',
-      position: 'Co-Founder & Dev maintainer',
-      link: 'https://github.com/bchainhub',
-    },
-    {
-      company: 'PayTo Alliance',
-      position: 'Co-Founder',
-      link: 'https://payto.onl',
-    },
-    {
-      company: 'Core Labs',
-      position: 'Co-Founder',
-      link: 'https://github.com/core-laboratories',
-    },
-    {
-      company: 'Core ◆ Talk',
-      position: 'Co-Founder & Admin',
-      link: 'https://coretalk.space',
-    },
+    // TODO Daniel: frühere Stationen ergaenzen falls relevant
+    // {
+    //   company: 'Firma XY',
+    //   position: 'Rolle',
+    //   from: 'YYYY',
+    //   to: 'YYYY',
+    //   companyLink: 'https://...',
+    // },
   ],
   certifications: [],
   educations: [],
   publications: [],
-  // Display articles from your medium or dev account. (Optional)
   blog: {
-    source: 'dev', // medium | dev
-    username: 'rastislavcore', // to hide blog section, keep it empty
-    limit: 4, // How many articles to display. Max is 10.
+    source: 'dev' as const,
+    username: '', // leer = Blog-Sektion versteckt; falls du dev.to oder Medium nutzt, hier eintragen
+    limit: 3,
   },
   googleAnalytics: {
-    id: '', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
+    id: '', // leer lassen, falls du kein Tracking willst
   },
   themeConfig: {
-    defaultTheme: 'light',
-
-    // Hides the switch in the navbar
-    // Useful if you want to support a single color mode
-    disableSwitch: true,
-
-    // Should use the prefers-color-scheme media-query,
-    // using user system preferences, instead of the hardcoded defaultTheme
+    defaultTheme: 'dracula',
+    disableSwitch: false,
     respectPrefersColorScheme: true,
-
-    // Display the ring in Profile picture
-    displayAvatarRing: false,
-
-    // Available themes. To remove any theme, exclude from here.
+    displayAvatarRing: true,
     themes: [
-      'light',
+      'dracula',
       'dark',
+      'synthwave',
+      'night',
+      'forest',
+      'business',
+      'light',
+      'nord',
+      'winter',
     ],
   },
-
-  // Optional Footer. Supports plain text or HTML.
-  footer: `Made with <a
-    class="text-primary"
-    href="https://github.com/rastislavcore/gitprofile"
-    target="_blank"
-    rel="noreferrer"
-  >Magic & Tweaks 🪄</a>`,
-
+  footer: `Built with <a class="text-primary" href="https://github.com/rastislavcore/gitprofile" target="_blank" rel="noreferrer">GitProfile</a> · Hosted on GitHub Pages`,
   enablePWA: true,
-
-  // GitHub Graph
   githubGraph: true,
 };
 

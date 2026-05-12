@@ -7,8 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Locks
-package-lock.json
+# Locks (package-lock.json IS committed for reproducible CI builds)
 yarn.lock
 pnpm-lock.yaml
 
