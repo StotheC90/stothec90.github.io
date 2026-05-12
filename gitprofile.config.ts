@@ -115,7 +115,7 @@ const CONFIG = {
     telegram: '',
     website: 'https://tellmemoreaboutcore.com',
     phone: '',
-    email: 'daniel.stothec@gmail.com',
+    email: 'daniel@tellmemoreaboutcore.com',
     // payto: 'payto://xcb/...', // optional: deine oeffentliche XCB-Adresse
     coreid: '', // optional: deine CorePass-ID (https://corepass.net)
   },
