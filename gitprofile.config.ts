@@ -48,7 +48,7 @@ const CONFIG = {
         {
           title: 'Tell Me More About Core',
           description:
-            'Community hub & content platform for Core Blockchain — long-form articles, drops, NFC-bound merch, and the CorePass-Identity ecosystem. Built as part of the Codetech ecosystem.',
+            'Coming soon. Something is brewing — stay tuned.',
           // Placeholder = GitHub-Avatar (TMMAC-Logo). Sobald die Landingpage live ist, durch echten Screenshot ersetzen.
           imageUrl:
             'https://avatars.githubusercontent.com/u/105504238?v=4&s=400',
